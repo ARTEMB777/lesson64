@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Головна</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <h1>Головна сторінка</h1>
+
+  <p>Поточна тема: <strong><%= theme %></strong></p>
+
+  <form action="/theme" method="POST">
+    <label for="theme">Оберіть тему:</label>
+    <select name="theme" id="theme">
+      <option value="light" <%= theme === 'light' ? 'selected' : '' %>>Світла</option>
+      <option value="dark" <%= theme === 'dark' ? 'selected' : '' %>>Темна</option>
+    </select>
+    <button type="submit">Зберегти</button>
+  </form>
+
+  <a href="/login">Увійти</a>
+</body>
+</html>
